@@ -1,10 +1,34 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import { rhythm } from '../utils/typography'
+import styled from 'styled-components';
+
+const Article = styled.article`
+  padding: var(--space-xl) 0;
+`;
+const Header = styled.header`
+  text-align:center;
+`;
+const Date = styled.p`
+  font-size: var(--f7);
+  font-family: var(--code);
+  margin: 0;
+  color: var(--gray-6);
+`;
+const Heading3 = styled.h3`
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-family: var(--orbitron);
+  margin-top: var(--space);
+  margin-bottom: var(--space);
+`;
+const Paragraph = styled.p`
+  color: var(--gray-9);
+  font-size: var(--f5);
+  line-height: var(--lh-copy);
+`;
 
 class BlogIndex extends React.Component {
   render() {
@@ -18,23 +42,25 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
+            <Article key={node.fields.slug}>
+              <Header>
+                <Date>{node.frontmatter.date}</Date>
+                <Heading3>
+                  <Link to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </Heading3>
+              </Header>
+              <section>
+                <Paragraph
+                  dangerouslySetInnerHTML=
+                  {{ __html: node.excerpt
+                }} />
+              </section>
+            </Article>
           )
         })}
       </Layout>

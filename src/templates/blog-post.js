@@ -5,7 +5,73 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import { rhythm, scale } from '../utils/typography'
+
+import styled from 'styled-components';
+
+const Date = styled.p`
+  font-size: var(--f7);
+  font-family: var(--code);
+  color: var(--gray-6);
+  text-align: center;
+`;
+const Header = styled.header`
+  h1 {
+    font-family: var(--orbitron);
+    font-size: var(--f1);
+    margin-bottom: var(--space-sm);
+    line-height: var(--lh-solid);
+  }
+  margin-bottom: var(--space-xxl);
+`;
+const Nav = styled.nav`
+  margin: var(--space-xl) 0;
+  display: flex;
+  ul {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  li {
+    font-size: var(--f3);
+    font-weight: 600;
+    font-family: var(--orbitron);
+  }
+  li:first-child a {
+    color: var(--orange-6);
+  }
+  li:last-child a {
+    color: var(--red-6);
+  }
+`;
+const Section = styled.section`
+  margin: 0 0 var(--space-xxl);
+  padding: 0 0 var(--space-xxl);
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  p,
+  li {
+    font-family: var(--sans-serif);
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  pre {
+    max-width: 40rem;
+  }
+  h2 {
+    margin-bottom: var(--space-lg);
+  }
+  h3 {
+    font-family: var(--sans-serif);
+    margin-top: var(--space-xxl);
+    margin-bottom: var(--space-lg);
+  }
+`;
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -17,34 +83,21 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
+        <article>
+        <Header>
+          <h1>{post.frontmatter.title}</h1>
+          <Date>
+            {post.frontmatter.date}
+          </Date>
+        </Header>
         <MDXRenderer>{post.body}</MDXRenderer>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio />
+        <footer>
+          <Bio />
+        </footer>
+        </article>
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <Nav>
+        <ul>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -60,6 +113,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        </Nav>
       </Layout>
     )
   }

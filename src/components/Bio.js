@@ -2,7 +2,19 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 
-import { rhythm } from '../utils/typography'
+import styled from 'styled-components';
+
+const Paragraph = styled.p`
+  font-size: var(--f6);
+  margin: 0 0 0 var(--space);
+  padding-left: var(--space);
+`;
+const BioWrapper = styled.div`
+  display: flex;
+  align-items:center;
+  margin: var(--space-xxl) var(--space) var(--space-xxl) 0;
+  padding: var(--space-xxl) 0;
+`;
 
 function Bio() {
   return (
@@ -11,31 +23,25 @@ function Bio() {
       render={data => {
         const { author, social } = data.site.siteMetadata
         return (
-          <div
-            style={{
-              display: `flex`,
-              marginBottom: rhythm(2.5),
-            }}
-          >
+          <BioWrapper>
             <Image
               fixed={data.avatar.childImageSharp.fixed}
               alt={author}
               style={{
-                marginRight: rhythm(1 / 2),
                 marginBottom: 0,
                 minWidth: 50,
                 borderRadius: `100%`,
               }}
             />
-            <p>
+            <Paragraph>
               Written by <strong>{author}</strong> who lives and works in
               Minneapolis building silly things.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 You should follow him on Twitter
               </a>
-            </p>
-          </div>
+            </Paragraph>
+          </BioWrapper>
         )
       }}
     />

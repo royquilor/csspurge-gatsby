@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog MDX`,
-    author: `Matt Hagner`,
-    description: `An extension of the gatsby starter blog, with support for MDX`,
+    title: `csspurge`,
+    author: `Roy Quilor`,
+    description: `A blog about CSS and HTML to make and design websites`,
     siteUrl: `https://gatsby-starter-blog-mdx-demo.netlify.com/`,
     social: {
       twitter: `mattinthecouch`,
@@ -48,9 +48,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-copy-linked-files`,
           },
-
           {
             resolve: `gatsby-remark-smartypants`,
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
           },
         ],
       },
@@ -136,11 +138,5 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
   ],
 }
