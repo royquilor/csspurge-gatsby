@@ -3,7 +3,67 @@ title: Mo CSS, Mo Problems
 date: "2015-05-01T22:12:03.284Z"
 ---
 
-import Aside from '../../../src/components/Aside'
+import Aside from '../../../src/components/Aside';
+import TitleBar from '../../../src/components/TitleBar';
+import Test from '../../../src/components/Test';
+import BarChart from '../../../src/components/BarChart';
+
+export const stations = [
+  {id: 0, name: "BassCss", value: 14},
+  {id: 1, name: "Pure CSS", value: 18},
+  {id: 2, name: "Wikipedia", value: 32},
+  {id: 3, name: "Tachyons", value: 40},
+  {id: 4, name: "Smashing Magazine", value: 56},
+  {id: 5, name: "Google", value: 65},
+  {id: 6, name: "Stripe", value: 70},
+  {id: 7, name: "Bootstrap", value: 111},
+  {id: 8, name: "Unsplash", value: 114},
+  {id: 9, name: "IMDB", value: 170},
+  {id: 10, name: "CSS-Tricks", value: 173},
+  {id: 11, name: "Slack", value: 188},
+  {id: 12, name: "UFC", value: 217},
+  {id: 13, name: "Paypal", value: 244},
+  {id: 14, name: "Dropbox", value: 272},
+  {id: 15, name: "BBC", value: 288},
+  {id: 16, name: "Yahoo", value: 312},
+  {id: 17, name: "Airbnb", value: 356},
+  {id: 18, name: "Apple", value: 362},
+  {id: 19, name: "Dribbble", value: 385},
+  {id: 20, name: "Facebook", value: 389},
+  {id: 21, name: "Youtube", value: 441},
+  {id: 22, name: "Etsy", value: 507},
+  {id: 23, name: "Github", value: 534},
+  {id: 24, name: "Stack Overflow", value: 600},
+  {id: 25, name: "Twitter", value: 623},
+  {id: 26, name: "Medium", value: 674},
+  {id: 27, name: "The Guardian", value: 697},
+  {id: 28, name: "Kickstarter", value: 991},
+  {id: 29, name: "Pinterest", value: 1180}
+];
+
+export const myReviews = [
+  {
+    name: "Tim's Tacos",
+    overall: 9,
+    variety: 7,
+    price: 8,
+    taste: 9
+  },
+  {
+    name: "Noodleville",
+    overall: 7,
+    variety: 5,
+    price: 6,
+    taste: 8
+  },
+  {
+    name: "Waffle Shack",
+    overall: 6,
+    variety: 5,
+    price: 4,
+    taste: 6
+  },
+];
 
 <Aside>
 - Contents
@@ -22,6 +82,19 @@ import Aside from '../../../src/components/Aside'
 - [More articles](#heading-13)
 - [Talks](#heading-14)
 </Aside>
+
+Wesbos affiliate link
+
+<TitleBar>
+  hello
+</TitleBar>
+
+<Test stations={stations} />
+
+<BarChart
+  data={myReviews}
+  bars={["overall", "variety", "price", "taste"]}
+/>
 
 You may not know, but your CSS is getting out of control, it may even have a mind of its own.
 
