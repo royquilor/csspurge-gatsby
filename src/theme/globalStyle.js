@@ -76,8 +76,13 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
   }
 
-  h2,h3,h4,h5,h6,p,li {
+  h2 {
     font-family: var(--sans-serif);
+    line-height: var(--lh-title);
+  }
+
+  h3,h4,h5,h6 {
+    font-family: var(--serif);
     line-height: var(--lh-title);
   }
 
@@ -104,7 +109,8 @@ export const GlobalStyle = createGlobalStyle`
 
   p,
   li {
-    font-size: var(--f5);
+    font-family: var(--serif);
+    font-size: var(--f4);
     line-height: var(--lh-copy);
   }
 
@@ -138,23 +144,6 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
   }
 
-  article ul:first-child {
-    z-index: 1;
-    position: fixed;
-    left: 0;
-    top: var(--space-xxl);
-    padding: var(--space-xl);
-    max-width: 100%;
-    margin: 0;
-    li {
-      font-family: var(--code);
-      font-size: var(--f8);
-    }
-    li a {
-      color: var(--gray-6);
-    }
-  }
-
   article section p:first-of-type {
     font-size: var(--f3);
   }
@@ -179,6 +168,8 @@ export const GlobalStyle = createGlobalStyle`
     display: block;
     font-size: var(--f1);
     font-family: var(--orbitron);
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
   }
 
   code {
@@ -190,42 +181,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   code[class*="language-"],
-    pre[class*="language-"] {
-    font-size: var(--f7);
+  pre[class*="language-"] {
+    font-size: var(--f7)!important;
   }
-
-  // code[class*="language-"],
-  // pre[class*="language-"] {
-  //   font-size: var(--f7);
-  // }
-  //
-  // .gatsby-highlight-code-line {
-  //   background-color: #feb;
-  //   display: block;
-  //   margin-right: -1em;
-  //   margin-left: -1em;
-  //   padding-right: 1em;
-  //   padding-left: 0.75em;
-  //   border-left: 0.25em solid #f99;
-  // }
-  //
-  // .gatsby-highlight {
-  // 	position: relative;
-  // }
-  //
-  // .gatsby-highlight pre[class*="language-"]::before {
-	// 	color: #232129;
-  //   font-size: 0.75rem;
-  //   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  //   letter-spacing: 0.075em;
-  //   line-height: 1;
-  //   position: absolute;
-  //   left: 1.5rem;
-  //   text-align: right;
-  //   text-transform: uppercase;
-  //   top: 0px;
-  //   border-radius: 0px 0px 4px 4px;
-  //   padding: 0.25rem 0.5rem;
-  // }
-
+  pre[class*="language-"] {
+  	padding: var(--space-lg)!important;
+  }
 `;

@@ -34,13 +34,14 @@ const MainWrap = styled.div`
   h5,
   h6,
   p,
-  pre,
   ul,
   ol,
-  footer {
+  footer,
+  big,
+  .gatsby-highlight {
     margin-left: auto;
     margin-right: auto;
-    max-width: 36rem;
+    max-width: 40rem;
   }
   blockquote p {
     max-width: 60rem;
@@ -48,14 +49,13 @@ const MainWrap = styled.div`
 `;
 const PostHeader = styled.div`
   display:flex;
+  flex-direction: column;
   align-items:center;
   justify-content: center;
   padding: var(--space-xl);
   h3 {
     font-family: var(--orbitron);
     margin: 0;
-    position:absolute;
-    left: var(--space-xl);
   }
   a {
     color: var(--gray-9);

@@ -8,22 +8,37 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  Text,
 } from 'recharts';
+
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  font-family: var(--code);
+  font-size: var(--f8);
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 const colorsList = ['#008f68', '#6db65b', '#4aae9b', '#dfa612'];
 
 class ExampleChart extends PureComponent {
   render() {
     return (
-      <div style={{ width: '100%', height: 350 }}>
+      <Wrapper style={{ width: '100%', height: 800 }}>
         <ResponsiveContainer>
-          <BarChart data={this.props.data}>
-            <CartesianGrid strokeDasharray="2 2" />
-            <XAxis dataKey="name" />
-            <YAxis type="number" domain={[0, 10]} />
+
+          <BarChart
+            textWidth={200}
+            data={this.props.data}
+            layout="vertical"
+            margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+            >
+            <XAxis type="number"  />
+            <YAxis type="category" dataKey="name" width={150} />
             <Tooltip />
             <Legend />
-
             {this.props.bars.map((bar, i) => (
               <Bar
                 dataKey={bar}
@@ -32,8 +47,9 @@ class ExampleChart extends PureComponent {
               />
             ))}
           </BarChart>
+
         </ResponsiveContainer>
-      </div>
+      </Wrapper>
     );
   }
 }

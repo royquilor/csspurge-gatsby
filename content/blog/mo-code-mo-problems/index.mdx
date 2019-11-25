@@ -3,13 +3,35 @@ title: Mo CSS, Mo Problems
 date: "2015-05-01T22:12:03.284Z"
 ---
 
-import Aside from '../../../src/components/Aside';
-import TitleBar from '../../../src/components/TitleBar';
-import Test from '../../../src/components/Test';
-import BarChart from '../../../src/components/BarChart';
 
-export const stations = [
-  {id: 0, name: "BassCss", value: 14},
+import TitleBar from '../../../src/components/TitleBar';
+import SimpleList from '../../../src/components/SimpleList';
+import BarChart from '../../../src/components/BarChart';
+import IntroText from '../../../src/components/IntroText';
+import StackedBarChart from '../../../src/components/StackedBarChart';
+
+export const list = [
+  {id: 1, name: "CSS filesize", href: "#heading-1"},
+  {id: 2, name: "Highest specificity score", href: "#heading-2"},
+  {id: 3, name: "CSS stats", href: "#heading-3"},
+  {id: 4, name: "Case study - Unsplash", href: "#heading-4"},
+  {id: 5, name: "Floats", href: "#heading-5"},
+  {id: 6, name: "Colors", href: "#heading-6"},
+  {id: 7, name: "Font sizes", href: "#heading-7"},
+  {id: 8, name: "Font families", href: "#heading-8"},
+  {id: 9, name: "Specificity", href: "#heading-9"},
+  {id: 10, name: "Media queries", href: "#heading-10"},
+  {id: 11, name: "Style links", href: "#heading-11"},
+  {id: 12, name: "Resources", href: "#heading-12"},
+  {id: 13, name: "More articles", href: "#heading-13"},
+  {id: 14, name: "Talks", href: "#heading-14"}
+];
+export const cssfilesize = [
+  {
+  id: 0,
+  name: "BassCss",
+  value: 14
+  },
   {id: 1, name: "Pure CSS", value: 18},
   {id: 2, name: "Wikipedia", value: 32},
   {id: 3, name: "Tachyons", value: 40},
@@ -40,63 +62,48 @@ export const stations = [
   {id: 28, name: "Kickstarter", value: 991},
   {id: 29, name: "Pinterest", value: 1180}
 ];
-
-export const myReviews = [
-  {
-    name: "Tim's Tacos",
-    overall: 9,
-    variety: 7,
-    price: 8,
-    taste: 9
-  },
-  {
-    name: "Noodleville",
-    overall: 7,
-    variety: 5,
-    price: 6,
-    taste: 8
-  },
-  {
-    name: "Waffle Shack",
-    overall: 6,
-    variety: 5,
-    price: 4,
-    taste: 6
-  },
+export const specificity = [
+  {name: "BassCss", value: 30},
+  {name: "Tachyons", value: 30},
+  {name: "Pure CSS", value: 51},
+  {name: "Unsplash", value: 60},
+  {name: "Bootstrap", value: 83},
+  {name: "Github", value: 110},
+  {name: "Medium", value: 110},
+  {name: "Pinterest", value: 121},
+  {name: "The Guardian", value: 150},
+  {name: "Smashing Magazine", value: 200},
+  {name: "Twitter", value: 202},
+  {name: "Wikipedia", value: 210},
+  {name: "Stripe", value: 214},
+  {name: "Google", value: 220},
+  {name: "Paypal", value: 222},
+  {name: "Yahoo", value: 230},
+  {name: "CSS-Tricks", value: 241},
+  {name: "Facebook", value: 241},
+  {name: "Etsy", value: 244},
+  {name: "Apple", value: 270},
+  {name: "Airbnb", value: 300},
+  {name: "Slack", value: 311},
+  {name: "Stack Overflow", value: 311},
+  {name: "IMDB", value: 312},
+  {name: "Youtube", value: 330},
+  {name: "BBC", value: 350},
+  {name: "Dribbble", value: 355},
+  {name: "Dropbox", value: 510},
+  {name: "UFC", value: 510},
+  {name: "Kickstarter", value: 512}
 ];
 
-<Aside>
-- Contents
-- [CSS filesize](#heading-1)
-- [Highest specificity score](#heading-2)
-- [CSS stats](#heading-3)
-- [Case study - Unsplash](#heading-4)
-- [Floats](#heading-5)
-- [Colors](#heading-6)
-- [Font sizes](#heading-7)
-- [Font families](#heading-8)
-- [Specificity](#heading-9)
-- [Media queries](#heading-10)
-- [Style links](#heading-11)
-- [Resources](#heading-12)
-- [More articles](#heading-13)
-- [Talks](#heading-14)
-</Aside>
+export const basscss = [
+  {id: 1, floats: 10, fontsizes: 8, fontfamilies: 3, specificity: 30, mediaqueries: 3, styletags: 0, stylelinks: 1, filesizekb: 14 }
+];
+
+<SimpleList list={list} />
+
+<IntroText text="You may not know, but your CSS is getting out of control, it may even have a mind of its own." />
 
 Wesbos affiliate link
-
-<TitleBar>
-  hello
-</TitleBar>
-
-<Test stations={stations} />
-
-<BarChart
-  data={myReviews}
-  bars={["overall", "variety", "price", "taste"]}
-/>
-
-You may not know, but your CSS is getting out of control, it may even have a mind of its own.
 
 The specificity war is happening right now and you might not even know it.
 
@@ -110,7 +117,10 @@ Users time should be the highest priority. More code, more potential bugs, more 
 
 CSSitis is a condition that causes performance and maintainability issues. It may even keep you up at night, it's a scientific word for - too much css.
 
-Chart
+<BarChart
+  data={cssfilesize}
+  bars={["value"]}
+/>
 
 ### <a name="heading-2"></a> Highest specificity score
 
@@ -118,9 +128,20 @@ Excessive use of nesting in sass and use of !important effects performance. Reme
 
 It will become hard to read for your team, so aim for two levels. Using too many ID's instead of classes will clog the users browser.
 
-Chart
+<BarChart
+  data={specificity}
+  bars={["value"]}
+/>
 
 ## <a name="heading-3"></a> CSS stats
+
+<BarChart
+  data={basscss}
+  bars={["value"]}
+  layout="horizontal">
+  <XAxis dataKey="name" type="category" />
+  <YAxis type="number" />
+</BarChart>
 
 Table
 
@@ -128,11 +149,9 @@ Stats gathered from CSS Stats. Have an idea? @csspurge, roy[at]csspurge.com and 
 
 ### <a name="heading-4"></a> Case study - Unsplash
 
-![](salty_egg.jpg)
-
 How I reduced the total score from 252 to 61 with a 76% reduction.
 
-### <a name="heading-5"></a> Highest floats
+## <a name="heading-5"></a> Highest floats
 
 <big>462</big>
 
@@ -144,7 +163,7 @@ Did you know there are only three floats?
   .fn { float: none; }
 ```
 
-### <a name="heading-6"></a> Highest colors
+## <a name="heading-6"></a> Highest colors
 
 <big>462</big>
 
@@ -158,7 +177,7 @@ How many colours does a brand have? Fifty shades of grey is the exception. It's 
   a { color: $blue;  }
 ```
 
-### <a name="heading-7"></a> Highest font sizes
+## <a name="heading-7"></a> Highest font sizes
 
 <big>89</big>
 
@@ -185,7 +204,7 @@ By default the web has provided 9 tags to give you a robust scale
   }
 ```
 
-### <a name="heading-8"></a> Highest font families
+## <a name="heading-8"></a> Highest font families
 
 <big>31</big>
 
@@ -207,7 +226,7 @@ It is recommended to have two fonts: one for the body and one for headings. Perh
   }
 ```
 
-### <a name="heading-9"></a> Highest specificity score
+## <a name="heading-9"></a> Highest specificity score
 
 <big>512</big>
 
@@ -239,13 +258,15 @@ According to the specificity war powers, option A would be Vader:
 
 A:
 <big>14</big>
+
 1+1+1+1+10
 
 B:
 <big>10</big>
+
 10
 
-### Points
+## Points
 
 - (1) Element Selector
 - (10) Class Selector
@@ -253,7 +274,7 @@ B:
 
 Another good reason to use classes over ID's
 
-### <a name="heading-10"></a> Highest media queries
+## <a name="heading-10"></a> Highest media queries
 
 <big>74</big>
 
@@ -292,7 +313,7 @@ Take reference from Bruce Lee "be like water my friend".
 
 ```
 
-### <a name="heading-11"></a> Highest style links
+## <a name="heading-11"></a> Highest style links
 
 <big>7</big>
 
@@ -313,11 +334,9 @@ Tools like Sass and Gulp can combine all stylesheets into one.
 
 Example folder structure:
 
-```text
-project/
-```
-
 ```markup
+  //project folder
+
   css/
   node_modules/
   sass/
@@ -326,9 +345,9 @@ project/
   package.json
 ```
 
-<kbd>sass/</kbd>
+```sass
+  //sass folder
 
-```markup
   _base.scss
   _type.scss
   _grid.scss
@@ -337,9 +356,10 @@ project/
   styles.scss
 ```
 
-<kbd>gulpfile.js</kbd>
-
 ```javscript
+
+  // gulpfile.js
+
   // 1. Use gulpjs to get all your sass partials
   gulp.task('workflow', function () {
     gulp.src('sass/*.scss')
@@ -353,7 +373,7 @@ project/
   });
 ```
 
-```javascript
+```html
   <!-- Voilà! -->
   <link rel="stylesheet" href="css/styles.css">
 ```
