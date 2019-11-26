@@ -9,6 +9,10 @@ import SimpleList from '../../../src/components/SimpleList';
 import BarChart from '../../../src/components/BarChart';
 import IntroText from '../../../src/components/IntroText';
 import StackedBarChart from '../../../src/components/StackedBarChart';
+import Table from '../../../src/components/Table';
+import Box from '../../../src/components/Box';
+import Col from '../../../src/components/Col';
+import Row from '../../../src/components/Row';
 
 export const list = [
   {id: 1, name: "CSS filesize", href: "#heading-1"},
@@ -23,7 +27,7 @@ export const list = [
   {id: 10, name: "Media queries", href: "#heading-10"},
   {id: 11, name: "Style links", href: "#heading-11"},
   {id: 12, name: "Resources", href: "#heading-12"},
-  {id: 13, name: "More articles", href: "#heading-13"},
+  {id: 13, name: "Articles", href: "#heading-13"},
   {id: 14, name: "Talks", href: "#heading-14"}
 ];
 export const cssfilesize = [
@@ -94,16 +98,46 @@ export const specificity = [
   {name: "UFC", value: 510},
   {name: "Kickstarter", value: 512}
 ];
-
-export const basscss = [
-  {id: 1, floats: 10, fontsizes: 8, fontfamilies: 3, specificity: 30, mediaqueries: 3, styletags: 0, stylelinks: 1, filesizekb: 14 }
+export const cssstats = [
+  {id: 1, name: "Basscss *", floats: 10, uniquecolors: 10, fontsizes: 8, fontfamilies: 3, specificity: 30, mediaqueries: 3, styletags: 0, stylelinks: 1, filesizekb: 14 },
+  {id: 2, name: "Pure CSS *", floats: 1, uniquecolors: 13, fontsizes: 14, fontfamilies: 7, specificity: 51, mediaqueries: 2, styletags: 0, stylelinks: 1, filesizekb: 18 },
+  {id: 3, name: "Tachyons *", floats: 12, uniquecolors: 31, fontsizes: 13, fontfamilies: 12, specificity: 30, mediaqueries: 3, styletags: 0, stylelinks: 1, filesizekb: 40 },
+  {id: 4, name: "Unsplash", floats: 63, uniquecolors: 23, fontsizes: 29, fontfamilies: 7, specificity: 60, mediaqueries: 9, styletags: 0, stylelinks: 1, filesizekb: 114 },
+  {id: 5, name: "Wikipedia", floats: 4, uniquecolors: 20, fontsizes: 21, fontfamilies: 3, specificity: 210, mediaqueries: 13, styletags: 3, stylelinks: 0, filesizekb: 32 },
+  {id: 6, name: "Bootstrap *", floats: 38, uniquecolors: 36, fontsizes: 23, fontfamilies: 7, specificity: 83, mediaqueries: 12, styletags: 0, stylelinks: 1, filesizekb: 111 },
+  {id: 7, name: "Stripe", floats: 3, uniquecolors: 28, fontsizes: 22, fontfamilies: 4, specificity: 214, mediaqueries: 4, styletags: 0, stylelinks: 3, filesizekb: 70 },
+  {id: 8, name: "Google", floats: 12, uniquecolors: 32, fontsizes: 19, fontfamilies: 5, specificity: 220, mediaqueries: 4, styletags: 8, stylelinks: 0, filesizekb: 65 },
+  {id: 9, name: "Smashing Magazine", floats: 40, uniquecolors: 46, fontsizes: 26, fontfamilies: 10, specificity: 200, mediaqueries: 10, styletags: 2, stylelinks: 2, filesizekb: 56 },
+  {id: 10, name: "Marvel App", floats: 13, uniquecolors: 63, fontsizes: 28, fontfamilies: 8, specificity: 121, mediaqueries: 15, styletags: 1, stylelinks: 2, filesizekb: 288 },
+  {id: 11, name: "CSS-Tricks", floats: 57, uniquecolors: 52, fontsizes: 49, fontfamilies: 5, specificity: 241, mediaqueries: 6, styletags: 1, stylelinks: 2, filesizekb: 173 },
+  {id: 12, name: "PayPal", floats: 38, uniquecolors: 41, fontsizes: 69, fontfamilies: 29, specificity: 222, mediaqueries: 21, styletags: 1, stylelinks: 1, filesizekb: 244 },
+  {id: 13, name: "Skyscanner", floats: 100, uniquecolors: 32, fontsizes: 38, fontfamilies: 10, specificity: 322, mediaqueries: 25, styletags: 1, stylelinks: 6, filesizekb: 180 },
+  {id: 14, name: "Slack", floats: 31, uniquecolors: 90, fontsizes: 59, fontfamilies: 7, specificity: 311, mediaqueries: 40, styletags: 0, stylelinks: 4, filesizekb: 188 },
+  {id: 15, name: "IMDB", floats: 124, uniquecolors: 79, fontsizes: 49, fontfamilies: 18, specificity: 312, mediaqueries: 2, styletags: 0, stylelinks: 7, filesizekb: 170 },
+  {id: 16, name: "Apple", floats: 38, uniquecolors: 16, fontsizes: 32, fontfamilies: 31, specificity: 270, mediaqueries: 44, styletags: 0, stylelinks: 5, filesizekb: 362 },
+  {id: 17, name: "Facebook", floats: 69, uniquecolors: 53, fontsizes: 27, fontfamilies: 24, specificity: 241, mediaqueries: 4, styletags: 1, stylelinks: 7, filesizekb: 389 },
+  {id: 18, name: "Yahoo", floats: 28, uniquecolors: 140, fontsizes: 72, fontfamilies: 12, specificity: 230, mediaqueries: 20, styletags: 7, stylelinks: 2, filesizekb: 312 },
+  {id: 19, name: "Airbnb", floats: 84, uniquecolors: 43, fontsizes: 50, fontfamilies: 11, specificity: 300, mediaqueries: 17, styletags: 0, stylelinks: 2, filesizekb: 356 },
+  {id: 20, name: "Dropbox", floats: 37, uniquecolors: 26, fontsizes: 21, fontfamilies: 4, specificity: 510, mediaqueries: 9, styletags: 2, stylelinks: 17, filesizekb: 272 },
+  {id: 21, name: "BBC", floats: 58, uniquecolors: 54, fontsizes: 60, fontfamilies: 18, specificity: 350, mediaqueries: 74, styletags: 1, stylelinks: 6, filesizekb: 288 },
+  {id: 22, name: "Rightmove", floats: 134, uniquecolors: 48, fontsizes: 73, fontfamilies: 11, specificity: 510, mediaqueries: 6, styletags: 0, stylelinks: 2, filesizekb: 166 },
+  {id: 23, name: "Zoopla", floats: 227, uniquecolors: 81, fontsizes: 63, fontfamilies: 15, specificity: 300, mediaqueries: 4, styletags: 1, stylelinks: 3, filesizekb: 271 },
+  {id: 24, name: "UFC", floats: 141, uniquecolors: 53, fontsizes: 37, fontfamilies: 4, specificity: 510, mediaqueries: 2, styletags: 0, stylelinks: 7, filesizekb: 217 },
+  {id: 25, name: "Medium", floats: 69, uniquecolors: 51, fontsizes: 57, fontfamilies: 10, specificity: 110, mediaqueries: 35, styletags: 0, stylelinks: 2, filesizekb: 674 },
+  {id: 26, name: "Youtube", floats: 210, uniquecolors: 49, fontsizes: 30, fontfamilies: 4, specificity: 440, mediaqueries: 24, styletags: 1, stylelinks: 4, filesizekb: 441 },
+  {id: 27, name: "Etsy", floats: 232, uniquecolors: 91, fontsizes: 54, fontfamilies: 18, specificity: 244, mediaqueries: 50, styletags: 1, stylelinks: 5, filesizekb: 507 },
+  {id: 28, name: "Dribbble", floats: 313, uniquecolors: 51, fontsizes: 41, fontfamilies: 5, specificity: 355, mediaqueries: 49, styletags: 0, stylelinks: 5, filesizekb: 385 },
+  {id: 29, name: "Twitter", floats: 280, uniquecolors: 78, fontsizes: 49, fontfamilies: 14, specificity: 202, mediaqueries: 29, styletags: 0, stylelinks: 3, filesizekb: 623 },
+  {id: 30, name: "Github", floats: 399, uniquecolors: 151, fontsizes: 63, fontfamilies: 17, specificity: 110, mediaqueries: 12, styletags: 0, stylelinks: 4, filesizekb: 534 },
+  {id: 31, name: "The Guardian", floats: 307, uniquecolors: 69, fontsizes: 38, fontfamilies: 16, specificity: 150, mediaqueries: 36, styletags: 8, stylelinks: 3, filesizekb: 697 },
+  {id: 32, name: "Stack Overflow", floats: 216, uniquecolors: 176, fontsizes: 40, fontfamilies: 9, specificity: 311, mediaqueries: 4, styletags: 0, stylelinks: 1, filesizekb: 600 },
+  {id: 33, name: "Pinterest", floats: 448, uniquecolors: 127, fontsizes: 76, fontfamilies: 16, specificity: 121, mediaqueries: 33, styletags: 1, stylelinks: 5, filesizekb: 1180 },
+  {id: 34, name: "Kickstarter", floats: 462, uniquecolors: 87, fontsizes: 89, fontfamilies: 23, specificity: 512, mediaqueries: 51, styletags: 0, stylelinks: 1, filesizekb: 991 },
 ];
 
 <SimpleList list={list} />
 
 <IntroText text="You may not know, but your CSS is getting out of control, it may even have a mind of its own." />
-
-Wesbos affiliate link
 
 The specificity war is happening right now and you might not even know it.
 
@@ -135,25 +169,11 @@ It will become hard to read for your team, so aim for two levels. Using too many
 
 ## <a name="heading-3"></a> CSS stats
 
-<BarChart
-  data={basscss}
-  bars={["value"]}
-  layout="horizontal">
-  <XAxis dataKey="name" type="category" />
-  <YAxis type="number" />
-</BarChart>
+<Table data={cssstats} />
 
-Table
+Stats from CSS Stats. Have an idea? @csspurge, roy[at]csspurge.com and Github.
 
-Stats gathered from CSS Stats. Have an idea? @csspurge, roy[at]csspurge.com and Github.
-
-### <a name="heading-4"></a> Case study - Unsplash
-
-How I reduced the total score from 252 to 61 with a 76% reduction.
-
-## <a name="heading-5"></a> Highest floats
-
-<big>462</big>
+## <a name="heading-5"></a> Highest floats &ndash; 462
 
 Did you know there are only three floats?
 
@@ -163,9 +183,7 @@ Did you know there are only three floats?
   .fn { float: none; }
 ```
 
-## <a name="heading-6"></a> Highest colors
-
-<big>462</big>
+## <a name="heading-6"></a> Highest colors &ndash; 176
 
 How many colours does a brand have? Fifty shades of grey is the exception. It's possible to just have one color for all tags and then one for links
 
@@ -177,9 +195,7 @@ How many colours does a brand have? Fifty shades of grey is the exception. It's 
   a { color: $blue;  }
 ```
 
-## <a name="heading-7"></a> Highest font sizes
-
-<big>89</big>
+## <a name="heading-7"></a> Highest font sizes &ndash; 89
 
 By default the web has provided 9 tags to give you a robust scale
 
@@ -204,9 +220,7 @@ By default the web has provided 9 tags to give you a robust scale
   }
 ```
 
-## <a name="heading-8"></a> Highest font families
-
-<big>31</big>
+## <a name="heading-8"></a> Highest font families &ndash; 31
 
 It is recommended to have two fonts: one for the body and one for headings. Perhaps other fonts are used to support different languages?
 
@@ -226,9 +240,7 @@ It is recommended to have two fonts: one for the body and one for headings. Perh
   }
 ```
 
-## <a name="heading-9"></a> Highest specificity score
-
-<big>512</big>
+## <a name="heading-9"></a> Highest specificity score &ndash; 512
 
 Frameworks are as low as 50. Too many declarations can lead to performance issues and bugs.
 
@@ -266,7 +278,7 @@ B:
 
 10
 
-## Points
+### Points
 
 - (1) Element Selector
 - (10) Class Selector
@@ -274,9 +286,7 @@ B:
 
 Another good reason to use classes over ID's
 
-## <a name="heading-10"></a> Highest media queries
-
-<big>74</big>
+## <a name="heading-10"></a> Highest media queries &ndash; 74
 
 320 and up looks at 4 sizes on average. To cater for every screen is counter intuitive.
 
@@ -285,7 +295,6 @@ New devices and screens will emerge, then you have to code for another screen.
 Take reference from Bruce Lee "be like water my friend".
 
 ```sass
-
   $mw-s:  320px;
   $mw-m:  768px;
   $mw-l:  1024px;
@@ -313,14 +322,11 @@ Take reference from Bruce Lee "be like water my friend".
 
 ```
 
-## <a name="heading-11"></a> Highest style links
-
-<big>7</big>
+## <a name="heading-11"></a> Highest style links &ndash; 17
 
 More external stylesheets will mean more http requests, so page speed is effected.
 
 ```html
-
   <!-- Good for maintanence but bad for performance -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/type.css">
@@ -357,7 +363,6 @@ Example folder structure:
 ```
 
 ```javscript
-
   // gulpfile.js
 
   // 1. Use gulpjs to get all your sass partials
@@ -378,4 +383,97 @@ Example folder structure:
   <link rel="stylesheet" href="css/styles.css">
 ```
 
+## <a name="heading-4"></a> Case study - Unsplash
+
+How I reduced the total score from 252 to 61 with a 76% reduction.
+
 ## <a name="heading-12"></a> Resources
+
+<Row>
+<Col>
+  <p>HTML template</p>
+  <p><a href="https://html5boilerplate.com/">html5 boilerplate</a></p>
+</Col>
+<Col>
+  <p>CSS toolkit</p>
+  <p><a href="http://tachyons.io/">Tachyons</a></p>
+</Col>
+<Col>
+  <p>CSS preprocessing</p>
+  <p><a href="http://sass-lang.com/">Sass</a></p>
+</Col>
+<Col>
+  <p>Build system 1</p>
+  <p><a href="https://gruntjs.com/">Grunt</a></p>
+</Col>
+<Col>
+  <p>Build system 2</p>
+  <p><a href="http://gulpjs.com/">Gulp</a></p>
+</Col>
+<Col>
+  <p>Text editors</p>
+  <p><a href="https://atom.io/">Atom</a>, <a href="https://www.vim.org/">Vim</a></p>
+</Col>
+<Col>
+  <p>Stats</p>
+  <p><a href="http://cssstats.com/">CSS stats</a></p>
+</Col>
+<Col>
+  <p>Versioning</p>
+  <p><a href="https://github.com/">Github</a></p>
+</Col>
+<Col>
+  <p>Linting</p>
+  <p><a href="http://csslint.net/">Csslint</a></p>
+</Col>
+<Col>
+  <p>Structure</p>
+  <p><a href="http://www.smacss.com/">SMACSS</a></p>
+</Col>
+<Col>
+  <p>Writing</p>
+  <p><a href="https://github.com/stubbornella/oocss/wiki">OOCSS</a></p>
+</Col>
+<Col>
+  <p>Naming</p>
+  <p><a href="https://tech.yandex.com/bem/">BEM</a></p>
+</Col>
+<Col>
+  <p>Components in JavaScript</p>
+  <p><a href="https://facebook.github.io/react/">React</a></p>
+</Col>
+<Col>
+  <p>Recommend a tool?</p>
+  <p><a href="https://twitter.com/csspurge">@csspurge</a></p>
+</Col>
+<Col>
+  <p>Gulp uncss</p>
+  <p><a href="https://github.com/ben-eb/gulp-uncss">Gulp uncss</a></p>
+</Col>
+</Row>
+
+Did I mention all these tools are free? Rather than reinvent the wheel everytime, some developers and designers have done some amazing things. Good to default from these tools. Collaboration is key.
+
+## <a name="heading-13"></a> Articles
+
+- [Top five mistakes of massive CSS](http://www.stubbornella.org/content/2010/07/01/top-5-mistakes-of-massive-css/)
+&mdash;Nicole Sullivan
+- [Optimize CSS delivery](https://varvy.com/pagespeed/optimize-css-delivery.html)
+&mdash;Patrick Sexton
+- [The specificity graph](http://csswizardry.com/2014/10/the-specificity-graph/)
+&mdash;Harry Roberts
+- [CSS and scalability](http://mrmrs.io/writing/2016/03/24/scalable-css/)
+&mdash;Adam Morse
+- [Rethinking variables in CSS](https://jxnblk.com/blog/rethinking-variables-in-css/)
+&mdash;Brent Jackson
+- [Falling With Style - feat. Jon Gold](http://spec.fm/podcasts/does-not-compute/33746)
+&mdash;Does not compute
+
+## <a name="heading-14"></a> Talks
+
+- [Daniel Eden: Move Slow and Fix Things](https://www.youtube.com/watch?v=zmjfh099zYg)
+&mdash;dotconferences
+- [Adam Morse: Things I’ve Learned About CSS](https://www.youtube.com/watch?v=14N_V56tqd4)
+&mdash;CSSConf Oakland 2014
+- [Harry Roberts: Managing CSS Projects with ITCSS](https://www.youtube.com/watch?v=1OKZOV-iLj4)
+&mdash;DaFED

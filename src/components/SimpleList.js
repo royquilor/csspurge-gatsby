@@ -8,17 +8,20 @@ const Nav = styled.div`
   left: var(--space);
   ul {
     margin-top: 0;
+    list-style-type: none;
   }
   li {
     line-height: var(--lh-title);
   }
   h4 {
-    
     margin-bottom: var(--space-sm);
     font-size: var(--f7);
+    font-family: var(--sans-serif);
   }
   a {
-    font-size: var(--f6);
+    font-family: var(--sans-serif);
+    color: var(--gray-6);
+    font-size: var(--f7);
   }
 `;
 

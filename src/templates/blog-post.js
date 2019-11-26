@@ -23,18 +23,19 @@ const Header = styled.header`
   margin-bottom: var(--space-xxl);
 `;
 const Nav = styled.nav`
-  margin: var(--space-xl) 0;
+  margin: calc(2 * var(--space-xxl)) 0;
   display: flex;
   ul {
     max-width: 100%;
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    list-style-type: none;
   }
   li {
     font-size: var(--f3);
     font-weight: 600;
     font-family: var(--orbitron);
+    margin: var(--space);
   }
   li:first-child a {
     color: var(--orange-6);

@@ -14,14 +14,16 @@ import {
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  font-family: var(--code);
-  font-size: var(--f8);
+  font-family: var(--sans-serif);
+  font-size: var(--f7);
   max-width: 48rem;
+  max-width: 58.5rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: var(--space-xxl);
 `;
 
-const colorsList = ['#008f68', '#6db65b', '#4aae9b', '#dfa612'];
+const colorsList = ['#e53935', '#6db65b', '#4aae9b', '#dfa612'];
 
 class ExampleChart extends PureComponent {
   render() {
@@ -38,7 +40,6 @@ class ExampleChart extends PureComponent {
             <XAxis type="number"  />
             <YAxis type="category" dataKey="name" width={150} />
             <Tooltip />
-            <Legend />
             {this.props.bars.map((bar, i) => (
               <Bar
                 dataKey={bar}

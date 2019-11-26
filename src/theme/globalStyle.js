@@ -67,7 +67,6 @@ export const GlobalStyle = createGlobalStyle`
 
   ul {
     margin: 0 auto;
-    list-style-type: none;
   }
 
   h1 {
@@ -76,23 +75,18 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
   }
 
-  h2 {
+  h2,h3,h4,h5,h6 {
     font-family: var(--sans-serif);
     line-height: var(--lh-title);
   }
 
-  h3,h4,h5,h6 {
-    font-family: var(--serif);
-    line-height: var(--lh-title);
-  }
-
   h2 {
-    font-size: var(--f2);
-    margin: var(--space-xxl) 0 var(--space-lg);
+    font-size: var(--f3);
+    margin: calc(var(--space-xxl) * 2) 0 var(--space-lg);
   }
 
   h3 {
-    font-size: var(--f3);
+    font-size: var(--f4);
   }
 
   h4 {
@@ -121,7 +115,6 @@ export const GlobalStyle = createGlobalStyle`
   ol,
   ul {
     padding: 0;
-    list-style-position: outside;
     margin: 0 0 var(--space);
   }
 
