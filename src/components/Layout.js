@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import { GlobalStyle } from '../theme/globalStyle';
-import SubscribeForm from '../components/SubscribeForm'
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
@@ -68,6 +67,18 @@ const Footer = styled.div`
   text-align: center;
   color: var(--gray-6);
 `;
+const Button = styled.div`
+  a {
+    color: white;
+    font-family: var(--sans-serif);
+    font-weight: 600;
+    background-color: var(--gray-8);
+    padding: var(--space-xs) var(--space);
+    display:flex;
+    border-radius: 4px;
+    margin: var(--space) 0 0;
+  }
+`;
 
 class Layout extends React.Component {
   render() {
@@ -87,6 +98,11 @@ class Layout extends React.Component {
           <SiteDescription>
             A blog about CSS and HTML to make and design websites
           </SiteDescription>
+          <Button>
+            <Link to={`/contact`}>
+              Subscribe
+            </Link>
+          </Button>
         </HeaderWrapper>
       )
     } else {
@@ -95,7 +111,7 @@ class Layout extends React.Component {
           <GlobalStyle />
           <h3>
             <Link to={`/`}>
-              {title}
+              csspurge
             </Link>
           </h3>
           <SiteDescription>
@@ -109,7 +125,6 @@ class Layout extends React.Component {
       <header>{header}</header>
       <MainWrap>
         <main>{children}</main>
-        <SubscribeForm />
         <Footer>
           © {new Date().getFullYear()}, Built with ❤️ and
           {` `}

@@ -144,14 +144,6 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
   }
 
-  article section p:first-of-type {
-    font-size: var(--f3);
-  }
-
-  article section p:only-child {
-    font-size: var(--f4);
-  }
-
   article:first-child h3 a {
     color: var(--orange-6);
   }
@@ -183,6 +175,7 @@ export const GlobalStyle = createGlobalStyle`
   code[class*="language-"],
   pre[class*="language-"] {
     font-size: var(--f7)!important;
+    border-radius: 4px;
   }
   pre[class*="language-"] {
   	padding: var(--space-lg)!important;

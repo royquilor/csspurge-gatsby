@@ -7,9 +7,6 @@ import styled from 'styled-components';
 
 const Article = styled.article`
   padding: var(--space-xl) 0;
-  p:first-of-type {
-    font-size: var(--f3);
-  }
 `;
 const Header = styled.header`
   text-align:center;
@@ -29,7 +26,7 @@ const Heading3 = styled.h3`
 `;
 const Paragraph = styled.p`
   color: var(--gray-9);
-  font-size: var(--f5);
+  font-size: var(--f4);
   line-height: var(--lh-copy);
 `;
 
