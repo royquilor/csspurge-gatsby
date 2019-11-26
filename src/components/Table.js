@@ -45,7 +45,7 @@ const Wrap = styled.div`
 function Table(props) {
   return (
   <Wrap>
-  <table cellspacing="0">
+  <table cellSpacing="0">
     <thead>
       <tr>
         <th></th>

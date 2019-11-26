@@ -4,6 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
+import Social from '../components/Social'
 
 import styled from 'styled-components';
 
@@ -92,7 +93,7 @@ class BlogPostTemplate extends React.Component {
         </Header>
         <MDXRenderer>{post.body}</MDXRenderer>
         </article>
-
+        <Social />
         <Nav>
         <ul>
           <li>

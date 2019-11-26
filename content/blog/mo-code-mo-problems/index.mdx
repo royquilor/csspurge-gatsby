@@ -178,9 +178,9 @@ Stats from CSS Stats. Have an idea? @csspurge, roy[at]csspurge.com and Github.
 Did you know there are only three floats?
 
 ```css
-  .fl { float: left; }
-  .fr { float: right; }
-  .fn { float: none; }
+.fl { float: left; }
+.fr { float: right; }
+.fn { float: none; }
 ```
 
 ## <a name="heading-6"></a> Highest colors &ndash; 176
@@ -188,11 +188,11 @@ Did you know there are only three floats?
 How many colours does a brand have? Fifty shades of grey is the exception. It's possible to just have one color for all tags and then one for links
 
 ```sass
-  $black: #111111;
-  $blue:  #0074D9;
+$black: #111111;
+$blue:  #0074D9;
 
-  body { color: $black; }
-  a { color: $blue;  }
+body { color: $black; }
+a { color: $blue;  }
 ```
 
 ## <a name="heading-7"></a> Highest font sizes &ndash; 89
@@ -200,24 +200,24 @@ How many colours does a brand have? Fifty shades of grey is the exception. It's 
 By default the web has provided 9 tags to give you a robust scale
 
 ```css
-  body { font-size: 16px; }
-  h1 { font-size: 2.25rem; }
-  h2 { font-size: 1.75rem; }
-  h3 { font-size: 1.5rem; }
-  h4 { font-size: 1.25rem; }
-  h5 { font-size: 1rem; }
-  h6 { font-size: 0.875rem; }
-  p { font-size: 1rem; }
-  small { font-size: 0.875rem; }
+body { font-size: 16px; }
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
+p { font-size: 1rem; }
+small { font-size: 0.875rem; }
 
-  // On a large screen
-  // Font size on the body with rem
-  // set on elements will increase in size
-  @media only screen and (min-width: 64em) {
-   body {
-    font-size: 18px;
-   }
-  }
+// On a large screen
+// Font size on the body with rem
+// set on elements will increase in size
+@media only screen and (min-width: 64em) {
+ body {
+  font-size: 18px;
+ }
+}
 ```
 
 ## <a name="heading-8"></a> Highest font families &ndash; 31
@@ -225,19 +225,19 @@ By default the web has provided 9 tags to give you a robust scale
 It is recommended to have two fonts: one for the body and one for headings. Perhaps other fonts are used to support different languages?
 
 ```sass
-  $copy:      SF UI Text, Arial, sans-serif;
-  $heading:   SF UI Display, Arial, sans-serif;
+$copy:      SF UI Text, Arial, sans-serif;
+$heading:   SF UI Display, Arial, sans-serif;
 
-  body { font-family: $copy; }
+body { font-family: $copy; }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-      font-family: $heading;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading;
+}
 ```
 
 ## <a name="heading-9"></a> Highest specificity score &ndash; 512
@@ -249,21 +249,21 @@ Some sites graph is very spikey at the beginning meaning a bigger hit on the sit
 To style an element that requires unique styling such as a sign up link, there are many ways to target it.
 
 ```html
-  <nav>
-      <ul>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a class="btn" href="#">Sign Up</a></li>
-      </ul>
-  </nav>
+<nav>
+  <ul>
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a class="btn" href="#">Sign Up</a></li>
+  </ul>
+</nav>
 ```
 
 ```css
-  // A. You could do this
-  nav ul li a.btn { }
+// A. You could do this
+nav ul li a.btn { }
 
-  // B. or simply
-  .btn { }
+// B. or simply
+.btn { }
 ```
 
 According to the specificity war powers, option A would be Vader:
@@ -295,30 +295,30 @@ New devices and screens will emerge, then you have to code for another screen.
 Take reference from Bruce Lee "be like water my friend".
 
 ```sass
-  $mw-s:  320px;
-  $mw-m:  768px;
-  $mw-l:  1024px;
-  $mw-xl: 1382px;
+$mw-s:  320px;
+$mw-m:  768px;
+$mw-l:  1024px;
+$mw-xl: 1382px;
 
-  // Mobile
-  @media screen and (min-width: $mw-s) {
+// Mobile
+@media screen and (min-width: $mw-s) {
 
-  }
+}
 
-  // Tablets
-  @media screen and (min-width: $mw-m) {
+// Tablets
+@media screen and (min-width: $mw-m) {
 
-  }
+}
 
-  // iPads
-  @media screen and (min-width: $mw-l) {
+// iPads
+@media screen and (min-width: $mw-l) {
 
-  }
+}
 
-  // Powerbooks
-  @media screen and (min-width: $mw-xl) {
+// Powerbooks
+@media screen and (min-width: $mw-xl) {
 
-  }
+}
 
 ```
 
@@ -327,13 +327,12 @@ Take reference from Bruce Lee "be like water my friend".
 More external stylesheets will mean more http requests, so page speed is effected.
 
 ```html
-  <!-- Good for maintanence but bad for performance -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/type.css">
-  <link rel="stylesheet" href="css/grid.css">
-  <link rel="stylesheet" href="css/colors.css">
-  <link rel="stylesheet" href="css/modules.css">
-
+<!-- Good for maintanence but bad for performance -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/type.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/colors.css">
+<link rel="stylesheet" href="css/modules.css">
 ```
 
 Tools like Sass and Gulp can combine all stylesheets into one.
@@ -341,46 +340,46 @@ Tools like Sass and Gulp can combine all stylesheets into one.
 Example folder structure:
 
 ```markup
-  //project folder
+//project folder
 
-  css/
-  node_modules/
-  sass/
-  gulpfile.js
-  index.html
-  package.json
+css/
+node_modules/
+sass/
+gulpfile.js
+index.html
+package.json
 ```
 
 ```sass
-  //sass folder
+//sass folder
 
-  _base.scss
-  _type.scss
-  _grid.scss
-  _colors.scss
-  _modules.scss
-  styles.scss
+_base.scss
+_type.scss
+_grid.scss
+_colors.scss
+_modules.scss
+styles.scss
 ```
 
 ```javscript
-  // gulpfile.js
+// gulpfile.js
 
-  // 1. Use gulpjs to get all your sass partials
-  gulp.task('workflow', function () {
-    gulp.src('sass/*.scss')
-      .pipe(sourcemaps.init())
-      .pipe(sass().on('error', sass.logError))
-      .pipe(cssnano())
-      .pipe(sourcemaps.write('./'))
-      // 2. Output to a single css file
-      .pipe(gulp.dest('css/'))
-      .pipe(browserSync.reload({stream:true}));
-  });
+// 1. Use gulpjs to get all your sass partials
+gulp.task('workflow', function () {
+  gulp.src('sass/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cssnano())
+    .pipe(sourcemaps.write('./'))
+    // 2. Output to a single css file
+    .pipe(gulp.dest('css/'))
+    .pipe(browserSync.reload({stream:true}));
+});
 ```
 
 ```html
-  <!-- Voilà! -->
-  <link rel="stylesheet" href="css/styles.css">
+<!-- Voilà! -->
+<link rel="stylesheet" href="css/styles.css">
 ```
 
 ## <a name="heading-4"></a> Case study - Unsplash
