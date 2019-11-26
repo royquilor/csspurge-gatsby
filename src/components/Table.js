@@ -19,23 +19,31 @@ const Wrap = styled.div`
   th {
     text-transform: uppercase;
     font-size: var(--f8);
-    padding: 0 var(--space-xxs);
+    padding: var(--space-xxs);
     font-weight: 600;
     color: var(--gray-8);
     position: sticky;
     top: 0;
     background: white;
+    border-bottom: 2px solid rgba(0,0,0,.1);
+  }
+  th:last-child {
+    padding-right: 0;
   }
   td {
-    padding: 0 var(--space-xxs);
+    padding: var(--space-xxs);
     text-align: right;
     color: var(--gray-8);
     font-weight: 600;
+    border-bottom: 1px solid rgba(0,0,0,.1);
   }
   td:first-child {
     text-align: left;
-
+    padding-left:0;
     color: var(--gray-8);
+  }
+  td:last-child {
+    padding-right:0;
   }
   tr:hover td {
     color: white;
