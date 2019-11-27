@@ -48,6 +48,11 @@ const Wrap = styled.div`
   tr:hover td {
     color: white;
   }
+  tfoot td:only-child {
+    text-align: center;
+    color: var(--gray-6);
+    border-bottom: 0;
+  }
 `;
 
 function Table(props) {
@@ -82,7 +87,7 @@ function Table(props) {
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="">* css frameworks</td>
+        <td colSpan="8">* css frameworks</td>
       </tr>
     </tfoot>
   </table>

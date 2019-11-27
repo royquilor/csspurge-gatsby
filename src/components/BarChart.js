@@ -45,6 +45,7 @@ class ExampleChart extends PureComponent {
                 dataKey={bar}
                 fill={colorsList[i]}
                 key={`bar_${i}`}
+                barSize={10}
               />
             ))}
           </BarChart>

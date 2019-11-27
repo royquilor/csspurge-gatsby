@@ -13,6 +13,7 @@ import Table from '../../../src/components/Table';
 import Box from '../../../src/components/Box';
 import Col from '../../../src/components/Col';
 import Row from '../../../src/components/Row';
+import FileName from '../../../src/components/FileName';
 
 export const list = [
   {id: 1, name: "CSS filesize", href: "#heading-1"},
@@ -167,7 +168,7 @@ It will become hard to read for your team, so aim for two levels. Using too many
   bars={["value"]}
 />
 
-## <a name="heading-3"></a> CSS stats
+### <a name="heading-3"></a> CSS stats
 
 <Table data={cssstats} />
 
@@ -288,9 +289,7 @@ Another good reason to use classes over ID's
 
 ## <a name="heading-10"></a> Highest media queries &ndash; 74
 
-320 and up looks at 4 sizes on average. To cater for every screen is counter intuitive.
-
-New devices and screens will emerge, then you have to code for another screen.
+320 and up looks at 4 sizes on average. To cater for every screen is counter intuitive. New devices and screens will emerge, then you have to code for another screen.
 
 Take reference from Bruce Lee "be like water my friend".
 
@@ -324,10 +323,11 @@ $mw-xl: 1382px;
 
 ## <a name="heading-11"></a> Highest style links &ndash; 17
 
-More external stylesheets will mean more http requests, so page speed is effected.
+More external stylesheets will mean more http requests, so page speed is effected. Good for maintenance but bad for performance.
+
+<FileName>index.html</FileName>
 
 ```html
-<!-- Good for maintanence but bad for performance -->
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/type.css">
 <link rel="stylesheet" href="css/grid.css">
@@ -339,9 +339,9 @@ Tools like Sass and Gulp can combine all stylesheets into one.
 
 Example folder structure:
 
-```markup
-//project folder
+<FileName>Project folder</FileName>
 
+```markup
 css/
 node_modules/
 sass/
@@ -350,9 +350,9 @@ index.html
 package.json
 ```
 
-```sass
-//sass folder
+<FileName>Sass folder</FileName>
 
+```sass
 _base.scss
 _type.scss
 _grid.scss
@@ -361,9 +361,9 @@ _modules.scss
 styles.scss
 ```
 
-```javscript
-// gulpfile.js
+<FileName>gulpfile.js</FileName>
 
+```javscript
 // 1. Use gulpjs to get all your sass partials
 gulp.task('workflow', function () {
   gulp.src('sass/*.scss')
@@ -376,6 +376,8 @@ gulp.task('workflow', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 ```
+
+<FileName>index.html</FileName>
 
 ```html
 <!-- Voilà! -->

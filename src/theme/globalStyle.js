@@ -166,6 +166,12 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
   }
 
+  .gatsby-highlight {
+    border-right: 1px solid #2d2d2d;
+    border-left: 1px solid #2d2d2d;
+    border-radius: 6px;
+  }
+
   code[class*="language-"],
   pre[class*="language-"] {
     font-size: var(--f7)!important;
