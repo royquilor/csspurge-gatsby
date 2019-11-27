@@ -5,7 +5,7 @@ const Wrap = styled.div`
   ul {
     list-style:none;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-gap: var(--space-xl);
     text-align: center;
     padding-left: 0;
@@ -46,16 +46,6 @@ function Social(props) {
             <svg className="icon" viewBox="0 0 32 32">
               <title>Share on Facebook</title>
               <path d="M32,16A16,16,0,1,0,13.5,31.806V20.625H9.438V16H13.5V12.475c0-4.01,2.389-6.225,6.043-6.225a24.644,24.644,0,0,1,3.582.312V10.5H21.107A2.312,2.312,0,0,0,18.5,13v3h4.438l-.71,4.625H18.5V31.806A16,16,0,0,0,32,16Z"></path>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a data-social="linkedin" data-url="https://www.csspurge.com" href="https://www.linkedin.com/shareArticle">
-            <svg className="icon" viewBox="0 0 32 32">
-              <title>Share on Linkedin</title>
-              <g>
-                  <path d="M29,1H3A2,2,0,0,0,1,3V29a2,2,0,0,0,2,2H29a2,2,0,0,0,2-2V3A2,2,0,0,0,29,1ZM9.887,26.594H5.374V12.25H9.887ZM7.63,10.281a2.625,2.625,0,1,1,2.633-2.625A2.624,2.624,0,0,1,7.63,10.281ZM26.621,26.594H22.2V19.656c0-1.687,0-3.75-2.35-3.75s-2.633,1.782-2.633,3.656v7.126H12.8V12.25h4.136v1.969h.094a4.7,4.7,0,0,1,4.231-2.344c4.513,0,5.359,3,5.359,6.844Z"></path>
-              </g>
             </svg>
           </a>
         </li>
