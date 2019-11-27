@@ -80,6 +80,7 @@ const Button = styled.div`
     display:flex;
     border-radius: 4px;
     margin: var(--space) 0 0;
+    font-size: var(--f7);
   }
 `;
 
