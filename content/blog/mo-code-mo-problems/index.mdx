@@ -15,6 +15,7 @@ import Col from '../../../src/components/Col';
 import Row from '../../../src/components/Row';
 import Div from '../../../src/components/Div';
 import FileName from '../../../src/components/FileName';
+import SideNote from '../../../src/components/SideNote';
 
 export const list = [
   {id: 1, name: "CSS filesize", href: "#heading-1"},
@@ -141,6 +142,10 @@ export const cssstats = [
 
 <IntroText text="You may not know, but your CSS is getting out of control, it may even have a mind of its own." />
 
+<SideNote>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin tellus ac justo aliquet
+</SideNote>
+
 The specificity war is happening right now and you might not even know it.
 
 Is your file always getting bigger? Are you adding stuff to the end of the file? You are showing symptoms of CSSitis. May be linked to Divitis, you can get it treated, but you have to act fast.
@@ -160,7 +165,7 @@ CSSitis is a condition that causes performance and maintainability issues. It ma
 
 ### <a name="heading-2"></a> Highest specificity score
 
-Excessive use of nesting in sass and use of !important effects performance. Remember the Inception rule, three levels down, you could lose sight of what's real.
+Excessive use of nesting in sass and use of `!important` effects performance. Remember the Inception rule, three levels down, you could lose sight of what's real.
 
 It will become hard to read for your team, so aim for two levels. Using too many ID's instead of classes will clog the users browser.
 

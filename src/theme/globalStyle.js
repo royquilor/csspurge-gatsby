@@ -33,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     --space-xxl:  3rem;
 
     --gray-50:    #FAFAFA;
+    --gray-2:     #EEEEEE;
     --gray-6:     #757575;
     --gray-8:     #212121;
     --gray-9:     #333333;
@@ -189,11 +190,20 @@ export const GlobalStyle = createGlobalStyle`
   pre {
     position: relative;
   }
+  :not(pre) > code[class*="language-"],
+  pre[class*="language-"] {
+    color: var(--gray-9);
+    background-color: var(--gray-2)!important;
+  }
   .gatsby-highlight {
     border-radius: 6px;
     margin-left: auto;
     margin-right: auto;
     max-width: 40rem;
+  }
+  .gatsby-highlight :not(pre) > code[class*="language-"],
+  .gatsby-highlight pre[class*="language-"] {
+    background: var(--gray-9)!important;
   }
   code[class*="language-"],
   pre[class*="language-"] {
