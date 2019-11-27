@@ -52,6 +52,14 @@ export const GlobalStyle = createGlobalStyle`
     --pink-6: #D81B60;
     --brown-6: #6D4C41;
 
+    --breakpoint-not-small: 30em;
+    --breakpoint-large: 60em;
+
+    /* Media Queries */
+// @custom-media --breakpoint-not-small screen and (min-width: 30em);
+// @custom-media --breakpoint-medium screen and (min-width: 30em) and (max-width: 60em);
+// @custom-media --breakpoint-large screen and (min-width: 60em);
+
   }
 
   body {
@@ -116,7 +124,30 @@ export const GlobalStyle = createGlobalStyle`
   ul {
     padding: 0;
     margin: 0 0 var(--space);
+    list-style-position: inside;
     list-style-position: outside;
+    list-style-image: none;
+  }
+
+  li {
+    position: relative;
+    padding-left: var(--space);
+    margin-left: var(--space);
+    list-style-type: none;
+  }
+
+  ul li::before {
+    content: '•';
+    position: absolute;
+    left:0;
+    color: var(--gray-6);
+  }
+
+  @media screen and (min-width: 80rem) {
+    ol,
+    ul {
+      list-style-position: outside;
+    }
   }
 
   blockquote p,
@@ -133,23 +164,18 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
   article {
     position: relative;
   }
-
   article:first-child h3 a {
     color: var(--orange-6);
   }
-
   article:nth-child(2) h3 a {
     color: var(--red-6);
   }
-
   article:last-child h3 a {
     color: var(--purple-6);
   }
-
   big {
     display: block;
     font-size: var(--f1);
@@ -157,27 +183,27 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     margin-bottom: var(--space-lg);
   }
-
   code {
     font-family: var(--code);
   }
-
   pre {
     position: relative;
   }
-
   .gatsby-highlight {
-    border-right: 1px solid #2d2d2d;
-    border-left: 1px solid #2d2d2d;
     border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40rem;
   }
-
   code[class*="language-"],
   pre[class*="language-"] {
-    font-size: var(--f7)!important;
+    font-size: var(--f8)!important;
     border-radius: 4px;
   }
-  pre[class*="language-"] {
-  	padding: var(--space-lg)!important;
+  @media screen and (min-width: 80rem) {
+    code[class*="language-"],
+    pre[class*="language-"] {
+      font-size: var(--f7)!important;
+    }
   }
 `;

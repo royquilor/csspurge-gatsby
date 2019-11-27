@@ -13,6 +13,7 @@ import Table from '../../../src/components/Table';
 import Box from '../../../src/components/Box';
 import Col from '../../../src/components/Col';
 import Row from '../../../src/components/Row';
+import Div from '../../../src/components/Div';
 import FileName from '../../../src/components/FileName';
 
 export const list = [
@@ -170,7 +171,9 @@ It will become hard to read for your team, so aim for two levels. Using too many
 
 ### <a name="heading-3"></a> CSS stats
 
+<Div>
 <Table data={cssstats} />
+</Div>
 
 Stats from CSS Stats. Have an idea? @csspurge, roy[at]csspurge.com and Github.
 
@@ -178,15 +181,21 @@ Stats from CSS Stats. Have an idea? @csspurge, roy[at]csspurge.com and Github.
 
 Did you know there are only three floats?
 
+<Div>
+
 ```css
 .fl { float: left; }
 .fr { float: right; }
 .fn { float: none; }
 ```
 
+</Div>
+
 ## <a name="heading-6"></a> Highest colors &ndash; 176
 
 How many colours does a brand have? Fifty shades of grey is the exception. It's possible to just have one color for all tags and then one for links
+
+<Div>
 
 ```sass
 $black: #111111;
@@ -196,9 +205,13 @@ body { color: $black; }
 a { color: $blue;  }
 ```
 
+</Div>
+
 ## <a name="heading-7"></a> Highest font sizes &ndash; 89
 
 By default the web has provided 9 tags to give you a robust scale
+
+<Div>
 
 ```css
 body { font-size: 16px; }
@@ -221,9 +234,13 @@ small { font-size: 0.875rem; }
 }
 ```
 
+</Div>
+
 ## <a name="heading-8"></a> Highest font families &ndash; 31
 
 It is recommended to have two fonts: one for the body and one for headings. Perhaps other fonts are used to support different languages?
+
+<Div>
 
 ```sass
 $copy:      SF UI Text, Arial, sans-serif;
@@ -241,6 +258,8 @@ h6 {
 }
 ```
 
+</Div>
+
 ## <a name="heading-9"></a> Highest specificity score &ndash; 512
 
 Frameworks are as low as 50. Too many declarations can lead to performance issues and bugs.
@@ -248,6 +267,8 @@ Frameworks are as low as 50. Too many declarations can lead to performance issue
 Some sites graph is very spikey at the beginning meaning a bigger hit on the site load when the user first visits.
 
 To style an element that requires unique styling such as a sign up link, there are many ways to target it.
+
+<Div>
 
 ```html
 <nav>
@@ -259,6 +280,10 @@ To style an element that requires unique styling such as a sign up link, there a
 </nav>
 ```
 
+</Div>
+
+<Div>
+
 ```css
 // A. You could do this
 nav ul li a.btn { }
@@ -266,6 +291,8 @@ nav ul li a.btn { }
 // B. or simply
 .btn { }
 ```
+
+</Div>
 
 According to the specificity war powers, option A would be Vader:
 
@@ -292,6 +319,8 @@ Another good reason to use classes over ID's
 320 and up looks at 4 sizes on average. To cater for every screen is counter intuitive. New devices and screens will emerge, then you have to code for another screen.
 
 Take reference from Bruce Lee "be like water my friend".
+
+<Div>
 
 ```sass
 $mw-s:  320px;
@@ -320,11 +349,13 @@ $mw-xl: 1382px;
 }
 
 ```
+</Div>
 
 ## <a name="heading-11"></a> Highest style links &ndash; 17
 
 More external stylesheets will mean more http requests, so page speed is effected. Good for maintenance but bad for performance.
 
+<Div>
 <FileName>index.html</FileName>
 
 ```html
@@ -334,11 +365,12 @@ More external stylesheets will mean more http requests, so page speed is effecte
 <link rel="stylesheet" href="css/colors.css">
 <link rel="stylesheet" href="css/modules.css">
 ```
+</Div>
 
 Tools like Sass and Gulp can combine all stylesheets into one.
 
 Example folder structure:
-
+<Div>
 <FileName>Project folder</FileName>
 
 ```markup
@@ -349,7 +381,8 @@ gulpfile.js
 index.html
 package.json
 ```
-
+</Div>
+<Div>
 <FileName>Sass folder</FileName>
 
 ```sass
@@ -360,7 +393,8 @@ _colors.scss
 _modules.scss
 styles.scss
 ```
-
+</Div>
+<Div>
 <FileName>gulpfile.js</FileName>
 
 ```javscript
@@ -376,13 +410,15 @@ gulp.task('workflow', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 ```
-
+</Div>
+<Div>
 <FileName>index.html</FileName>
 
 ```html
 <!-- Voilà! -->
 <link rel="stylesheet" href="css/styles.css">
 ```
+</Div>
 
 ## <a name="heading-4"></a> Case study - Unsplash
 
@@ -390,6 +426,7 @@ How I reduced the total score from 252 to 61 with a 76% reduction.
 
 ## <a name="heading-12"></a> Resources
 
+<Div>
 <Row>
 <Col>
   <p>HTML template</p>
@@ -452,6 +489,7 @@ How I reduced the total score from 252 to 61 with a 76% reduction.
   <p><a href="https://github.com/ben-eb/gulp-uncss">Gulp uncss</a></p>
 </Col>
 </Row>
+</Div>
 
 Did I mention all these tools are free? Rather than reinvent the wheel everytime, some developers and designers have done some amazing things. Good to default from these tools. Collaboration is key.
 

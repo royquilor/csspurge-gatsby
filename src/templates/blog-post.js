@@ -37,12 +37,16 @@ const Nav = styled.nav`
     font-weight: 600;
     font-family: var(--orbitron);
     margin: var(--space);
+    padding-left: 0;
   }
   li:first-child a {
     color: var(--orange-6);
   }
   li:last-child a {
     color: var(--red-6);
+  }
+  li::before {
+    content: "";
   }
 `;
 const Section = styled.section`

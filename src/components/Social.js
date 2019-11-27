@@ -8,6 +8,10 @@ const Wrap = styled.div`
     grid-template-columns: repeat(4,1fr);
     grid-gap: var(--space-xl);
     text-align: center;
+    padding-left: 0;
+  }
+  li::before {
+    content: "";
   }
   a {
     display: block;

@@ -25,6 +25,8 @@ const SiteDescription = styled.p`
   font-size: var(--f5);
   margin: 0;
   color: var(--gray-6);
+  text-align: center;
+  line-height: var(--lh-title);
 `;
 const MainWrap = styled.div`
   h2,
@@ -36,11 +38,12 @@ const MainWrap = styled.div`
   ul,
   ol,
   footer,
-  big,
-  .gatsby-highlight {
+  big {
     margin-left: auto;
     margin-right: auto;
     max-width: 40rem;
+    padding-left: var(--space);
+    padding-right: var(--space);
   }
   blockquote p {
     max-width: 60rem;
@@ -54,7 +57,7 @@ const PostHeader = styled.div`
   padding: var(--space-xl);
   h3 {
     font-family: var(--orbitron);
-    margin: 0;
+    margin: 0 0 var(--space);
   }
   a {
     color: var(--gray-9);

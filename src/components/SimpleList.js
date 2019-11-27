@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Nav = styled.div`
-  position: sticky;
-  float: left;
-  top: 0;
-  left: var(--space);
+const Nav = styled.nav`
   ul {
     margin-top: 0;
     list-style-type: none;
   }
   li {
     line-height: var(--lh-title);
+    margin-left: 0;
+    padding-left: 0;
+  }
+  li::before {
+    content: "";
   }
   h4 {
     margin-bottom: var(--space-sm);
@@ -23,7 +24,14 @@ const Nav = styled.div`
     color: var(--gray-6);
     font-size: var(--f7);
   }
+  @media screen and (min-width: 80rem) {
+    position: sticky;
+    float: left;
+    top: 0;
+    left: var(--space);
+  }
 `;
+
 
 function SimpleList(props) {
   return (

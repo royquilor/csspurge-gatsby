@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrap = styled.div`
+  overflow: auto;
   table {
     font-family: var(--sans-serif);
     font-size: var(--f7);
@@ -47,6 +48,9 @@ const Wrap = styled.div`
   }
   tr:hover td {
     color: white;
+  }
+  tfoot tr:hover {
+    background-color: white;
   }
   tfoot td:only-child {
     text-align: center;
