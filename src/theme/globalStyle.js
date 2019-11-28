@@ -4,7 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   :root {
 
     --sans-serif: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
-    --serif: 'minion pro',georgia,times,serif;
+    --serif: georgia,times,serif;
     --marvin: 'Marvin Visions Big';
     --orbitron: 'Orbitron';
     --code: Menlo, Consolas, monaco, monospace;
