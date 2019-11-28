@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Article = styled.article`
   padding: var(--space-xl) 0;
@@ -26,7 +26,7 @@ const Heading3 = styled.h3`
 `;
 const Paragraph = styled.p`
   color: var(--gray-9);
-  font-size: var(--f4);
+
   line-height: var(--lh-copy);
 `;
 

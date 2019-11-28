@@ -3,7 +3,7 @@ module.exports = {
     title: `csspurge`,
     author: `Roy Quilor`,
     description: `A blog about CSS and HTML to make and design websites`,
-    siteUrl: `https://gatsby-starter-blog-mdx-demo.netlify.com/`,
+    siteUrl: `https://www.csspurge.com/`,
     social: {
       twitter: `mattinthecouch`,
     },
@@ -62,7 +62,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-75625914-1`,
       },
     },
     {
@@ -136,6 +136,9 @@ module.exports = {
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },
+    },
+    {
+    resolve: `gatsby-plugin-styled-components`,
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,

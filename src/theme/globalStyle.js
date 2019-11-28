@@ -113,8 +113,15 @@ export const GlobalStyle = createGlobalStyle`
   p,
   li {
     font-family: var(--serif);
-    font-size: var(--f4);
+    font-size: var(--f5);
     line-height: var(--lh-copy);
+  }
+
+  @media screen and (min-width: 30em) {
+    p,
+    li {
+      font-size: var(--f4);
+    }
   }
 
   article p {
