@@ -33,14 +33,19 @@ const Paragraph = styled.p`
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
+    const title = data.site.siteMetadata.title
+    {/*
+    const title = data.site.siteMetadata.title
+    */}
+    const siteTitle = data.site.siteMetadata.siteTitle
+    const siteDescription = data.site.siteMetadata.description
     const posts = data.allMdx.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={title} description={siteDescription}>
         <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          title={siteTitle}
+          keywords={[`css`, `html`, `design`, `development`, `website`, `gatsbyjs`, `javascript`, `react`]}
         />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
@@ -75,6 +80,8 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteTitle
+        description
       }
     }
     allMdx(
