@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 
 import { GlobalStyle } from '../theme/globalStyle';
 import styled from 'styled-components';
+import '../styles/global.css'
 
 const HeaderWrapper = styled.div`
   border-bottom: 1px solid rgba(0,0,0,.1);
@@ -86,7 +87,7 @@ const Button = styled.div`
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { location, title, children, description } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
@@ -100,7 +101,7 @@ class Layout extends React.Component {
             </Link>
           </SiteTitle>
           <SiteDescription>
-            A blog about CSS and HTML to make and design websites
+            {description}
           </SiteDescription>
           <Button>
             <Link to={`/contact`}>
@@ -115,11 +116,11 @@ class Layout extends React.Component {
           <GlobalStyle />
           <h3>
             <Link to={`/`}>
-              csspurge
+              {title}
             </Link>
           </h3>
           <SiteDescription>
-            A blog about CSS and HTML to make and design websites
+            {description}
           </SiteDescription>
         </PostHeader>
       )

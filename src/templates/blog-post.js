@@ -81,12 +81,13 @@ const Section = styled.section`
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const title = this.props.data.site.siteMetadata.title
+    const siteDescription = this.props.data.site.siteMetadata.description
     const { previous, next } = this.props.pageContext
     console.log(this.props.pageContext)
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={title} description={siteDescription}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <article>
         <Header>
@@ -129,6 +130,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        description
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {

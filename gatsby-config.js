@@ -1,12 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `csspurge`,
+    siteTitle: `CSS, HTML, Design and Development blog`,
     author: `Roy Quilor`,
-    description: `A blog about CSS and HTML to make and design websites`,
-    siteUrl: `https://www.csspurge.com/`,
-    social: {
-      twitter: `mattinthecouch`,
-    },
+    description: `A blog on CSS, HTML, Javascript to make and design websites`,
+    siteUrl: `https://www.csspurge.com`,
+    siteLanguage: `en-GB`,
+    siteLocale: `en_gb`,
+    twitterUsername: `csspurge`,
   },
   plugins: [
     {
@@ -138,7 +139,14 @@ module.exports = {
       },
     },
     {
-    resolve: `gatsby-plugin-styled-components`,
+      resolve: `gatsby-plugin-styled-components`,
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `sitemap.xml`,
+        exclude: [`/404`]
+      }
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
