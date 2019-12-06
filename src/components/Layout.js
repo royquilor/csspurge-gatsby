@@ -133,7 +133,8 @@ class Layout extends React.Component {
         <Footer>
           © {new Date().getFullYear()}, Built with ❤️ and
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org">Gatsby</a>&nbsp; &middot;
+          <Link to={`/privacy`}>&nbsp; Privacy</Link>
         </Footer>
       </MainWrap>
       </div>
