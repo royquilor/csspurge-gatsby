@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import SubscribeForm from '../components/SubscribeForm'
+import EmailListForm from '../components/EmailListForm'
 import styled from 'styled-components'
 
 const Div = styled.div`
@@ -23,7 +24,10 @@ class Contact extends React.Component {
       <Layout title={siteTitle} location={this.props.location} description={siteDescription}>
         <SEO title="Contact" description="Subscribe for css, html, design tips or contact us" />
         <h1>Subscribe</h1>
-        <SubscribeForm />
+        <Div>
+          <p>Get the latest article</p>
+        </Div>
+        <EmailListForm />
         <Div>
           <p>Drop an email roy[at]csspurge.com or send a tweet to @csspurge</p>
         </Div>

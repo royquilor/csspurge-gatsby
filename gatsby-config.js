@@ -157,5 +157,11 @@ module.exports = {
         siteUrl: `https://www.csspurge.com`,
       },
     },
+    {
+      resolve: `gatsby-plugin-mailchimp`,
+      options: {
+        endpoint: `https://csspurge.us13.list-manage.com/subscribe/post?u=6f3398af6170a693c12c56560&amp;id=abb30cd693`,
+      },
+    },
   ],
 }

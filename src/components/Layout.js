@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 
 import { GlobalStyle } from '../theme/globalStyle';
 import styled from 'styled-components';
+import EmailListForm from '../components/EmailListForm'
 import '../styles/global.css'
 
 const HeaderWrapper = styled.div`
@@ -71,19 +72,6 @@ const Footer = styled.div`
   text-align: center;
   color: var(--gray-6);
 `;
-const Button = styled.div`
-  a {
-    color: white;
-    font-family: var(--sans-serif);
-    font-weight: 600;
-    background-color: var(--gray-8);
-    padding: var(--space-xs) var(--space);
-    display:flex;
-    border-radius: 4px;
-    margin: var(--space) 0 0;
-    font-size: var(--f7);
-  }
-`;
 
 class Layout extends React.Component {
   render() {
@@ -103,11 +91,6 @@ class Layout extends React.Component {
           <SiteDescription>
             {description}
           </SiteDescription>
-          <Button>
-            <Link to={`/contact`}>
-              Subscribe
-            </Link>
-          </Button>
         </HeaderWrapper>
       )
     } else {
@@ -130,6 +113,7 @@ class Layout extends React.Component {
       <header>{header}</header>
       <MainWrap>
         <main>{children}</main>
+        <EmailListForm />
         <Footer>
           © {new Date().getFullYear()}, Built with ❤️ and
           {` `}
