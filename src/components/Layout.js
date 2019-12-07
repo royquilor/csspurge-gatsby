@@ -84,6 +84,10 @@ const Button = styled.div`
     font-size: var(--f7);
   }
 `;
+const Span = styled.span`
+  margin-left: var(--space-xs);
+  margin-right: var(--space-xs);
+`;
 
 class Layout extends React.Component {
   render() {
@@ -133,8 +137,8 @@ class Layout extends React.Component {
         <Footer>
           © {new Date().getFullYear()}, Built with ❤️ and
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>&nbsp; &middot;
-          <Link to={`/privacy`}>&nbsp; Privacy</Link>
+          <a href="https://www.gatsbyjs.org">Gatsby</a><Span>&middot;</Span>
+          <Link to={`/privacy`}>Privacy</Link>
         </Footer>
       </MainWrap>
       </div>
