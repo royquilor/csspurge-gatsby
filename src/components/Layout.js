@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
+import EmailListForm from '../components/EmailListForm'
 import { GlobalStyle } from '../theme/globalStyle';
 import styled from 'styled-components';
 import '../styles/global.css'
@@ -116,6 +116,7 @@ class Layout extends React.Component {
       <header>{header}</header>
       <MainWrap>
         <main>{children}</main>
+        <EmailListForm />
         <Footer>
           © {new Date().getFullYear()}, Built with ❤️ and
           {` `}
