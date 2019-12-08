@@ -71,19 +71,6 @@ const Footer = styled.div`
   text-align: center;
   color: var(--gray-6);
 `;
-const Button = styled.div`
-  a {
-    color: white;
-    font-family: var(--sans-serif);
-    font-weight: 600;
-    background-color: var(--gray-8);
-    padding: var(--space-xs) var(--space);
-    display:flex;
-    border-radius: 4px;
-    margin: var(--space) 0 0;
-    font-size: var(--f7);
-  }
-`;
 const Span = styled.span`
   margin-left: var(--space-xs);
   margin-right: var(--space-xs);
@@ -107,11 +94,6 @@ class Layout extends React.Component {
           <SiteDescription>
             {description}
           </SiteDescription>
-          <Button>
-            <Link to={`/contact`}>
-              Subscribe
-            </Link>
-          </Button>
         </HeaderWrapper>
       )
     } else {
