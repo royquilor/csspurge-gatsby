@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 
 import { GlobalStyle } from '../theme/globalStyle';
 import styled from 'styled-components';
-import EmailListForm from '../components/EmailListForm'
 import '../styles/global.css'
 
 const HeaderWrapper = styled.div`
@@ -72,6 +71,10 @@ const Footer = styled.div`
   text-align: center;
   color: var(--gray-6);
 `;
+const Span = styled.span`
+  margin-left: var(--space-xs);
+  margin-right: var(--space-xs);
+`;
 
 class Layout extends React.Component {
   render() {
@@ -113,11 +116,11 @@ class Layout extends React.Component {
       <header>{header}</header>
       <MainWrap>
         <main>{children}</main>
-        <EmailListForm />
         <Footer>
           © {new Date().getFullYear()}, Built with ❤️ and
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org">Gatsby</a><Span>&middot;</Span>
+          <Link to={`/privacy`}>Privacy</Link>
         </Footer>
       </MainWrap>
       </div>

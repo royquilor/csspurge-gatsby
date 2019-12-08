@@ -98,7 +98,6 @@ class BlogPostTemplate extends React.Component {
         </Header>
         <MDXRenderer>{post.body}</MDXRenderer>
         </article>
-        <Social />
         <Nav>
         <ul>
           <li>
