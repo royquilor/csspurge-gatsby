@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import EmailListForm from '../components/EmailListForm'
+
 import { GlobalStyle } from '../theme/globalStyle';
 import styled from 'styled-components';
 import '../styles/global.css'
+
+import EmailListForm from '../components/EmailListForm'
+import Social from '../components/Social'
 
 const HeaderWrapper = styled.div`
   border-bottom: 1px solid rgba(0,0,0,.1);
@@ -117,10 +120,12 @@ class Layout extends React.Component {
       <MainWrap>
         <main>{children}</main>
         <EmailListForm />
+        <Social />
         <Footer>
           © {new Date().getFullYear()}, Built with ❤️ and
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a><Span>&middot;</Span>
+          <a href="https://www.gatsbyjs.org" target="_blank">Gatsby</a><Span>&middot;</Span>
+          <a href="mailto:roy@csspurge.com" target="_blank">Email</a><Span>&middot;</Span>
           <Link to={`/privacy`}>Privacy</Link>
         </Footer>
       </MainWrap>
