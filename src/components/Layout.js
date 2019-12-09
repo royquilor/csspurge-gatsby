@@ -127,6 +127,7 @@ class Layout extends React.Component {
           <a href="https://www.gatsbyjs.org" target="_blank">Gatsby</a><Span>&middot;</Span>
           <a href="mailto:roy@csspurge.com" target="_blank">Email</a><Span>&middot;</Span>
           <Link to={`/privacy`}>Privacy</Link>
+          <Link to={`/disclosure`}>Disclosure</Link>
         </Footer>
       </MainWrap>
       </div>
