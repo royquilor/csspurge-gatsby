@@ -7,7 +7,6 @@ import '../styles/global.css'
 
 import EmailListForm from '../components/EmailListForm'
 import Social from '../components/Social'
-import Title from '../components/Title'
 
 const HeaderWrapper = styled.div`
   border-bottom: 1px solid rgba(0,0,0,.1);
@@ -118,7 +117,6 @@ class Layout extends React.Component {
     return (
       <div>
       <header>{header}</header>
-      <Title />
       <MainWrap>
         <main>{children}</main>
         <EmailListForm />
