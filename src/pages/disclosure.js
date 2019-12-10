@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import PrivacyPolicy from '../components/PrivacyPolicy'
+import DisclosurePage from '../components/DisclosurePage'
 import styled from 'styled-components'
 
 const Div = styled.div`
@@ -23,7 +23,7 @@ class Disclosure extends React.Component {
       <Layout title={siteTitle} location={this.props.location} description={siteDescription}>
         <SEO title="Disclosure" description="Disclosure" />
         <Div>
-          <PrivacyPolicy />
+          <DisclosurePage />
         </Div>
       </Layout>
     )
